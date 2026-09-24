@@ -5,7 +5,7 @@ import Link from 'next/link';
 function countKeys(obj: any): number {
   if (typeof obj !== 'object' || obj === null) return 0;
   if (Array.isArray(obj)) return obj.reduce((sum, item) => sum + countKeys(item), 0);
-  return Object.keys(obj).length + Object.values(obj).reduce((sum, val) => sum + countKeys(val), 0);
+  return Object.keys(obj).length + Object.values(obj).reduce((sum: number, val) => sum + countKeys(val), 0);
 }
 
 function formatJSON(input: string, indent: number = 2) {
